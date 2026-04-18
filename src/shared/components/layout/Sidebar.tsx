@@ -14,7 +14,7 @@ export const Sidebar = () => {
     { name: "Settings", icon: ImageSettings },
   ];
   return (
-    <div className="w-20 h-full bg-stone-950/60 backdrop-blur-xl p-4 flex flex-col items-center justify-center">
+    <div className="w-20 h-full bg-stone-950/10 backdrop-blur-xl p-4 flex flex-col items-center justify-center ">
       {/* <h1 className="text-lg font-semibold mb-6">Executive Dashboard</h1> */}
 
       <nav className="space-y-4">

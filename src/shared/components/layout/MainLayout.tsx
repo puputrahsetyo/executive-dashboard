@@ -1,10 +1,11 @@
 import { Outlet } from "react-router-dom";
 import { Sidebar } from "./Sidebar";
 import { Header } from "./Header";
+import ImageBg from "@/assets/images/sep09.jpg";
 
 export const MainLayout = () => {
   return (
-    <div className="flex h-screen bg-[#0a0a0a] text-white">
+    <div className="flex h-screen bg-[#0a0a0a] text-white bg-cover bg-center" style={{ backgroundImage: `url(${ImageBg})` }}>
       {/* Sidebar */}
       <Sidebar />
 

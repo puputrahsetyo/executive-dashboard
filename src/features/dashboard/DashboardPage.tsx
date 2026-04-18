@@ -4,6 +4,7 @@ import { KPICard } from "./components/cards/KPICards";
 import { ChartRenderer } from "@/chart-system/components/ChartRenderer";
 import { TopProducts } from "./components/dashboard/TopProducts";
 import { ActivityFeed } from "./components/dashboard/ActivityFeed";
+import HeaderFilter from "./layout/HeaderFilter";
 
 
 export const DashboardPage = () => {
@@ -26,6 +27,7 @@ export const DashboardPage = () => {
 
   return (
     <div className="space-y-6">
+      <HeaderFilter onFilterChange={(filter) => console.log("Selected filter:", filter)} />
       {/* KPI */}
       <div className="grid grid-cols-4 gap-4">
         {isLoading
