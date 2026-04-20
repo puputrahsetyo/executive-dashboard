@@ -26,7 +26,7 @@ export const Header = () => {
           placeholder="Search..."
           className="px-3 py-1.5 text-sm border border-stone-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
         />
-        <div className="text-sm text-stone-400">Puput 👋</div>
+        {/* <div className="text-sm text-stone-400">Puput 👋</div> */}
       </div>
     </div>
   );

@@ -49,8 +49,8 @@ body::after {
   inset: 0;
   pointer-events: none;
 
-  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-  opacity: 0.04;
+  /* background-image: url("https://grainy-gradients.vercel.app/noise.svg"); */
+  /* opacity: 0.04; */
 }
 
 h1, h2, h3 {
