@@ -6,18 +6,20 @@ import { BaseChart } from "./BaseChart";
 type Props = {
   data: { x: string | number; y: number }[];
   config?: {
-    xKey: string;
-    yKey: string;
+    xKey?: string;
+    yKey?: string;
     colors?: {
       primary?: string;
     };
+    width?: number;
+    height?: number;
+    margin?: { top: number; right: number; bottom: number; left: number };
 }
 };
 
 export const LineChart = ({ data, config }: Props) => {
-  const { width, height, margin, boundedWidth, boundedHeight } =
-    useChartDimensions();
-    const color = config?.colors?.primary || "blue";
+  const { width, height, margin, boundedWidth, boundedHeight } = useChartDimensions(config?.width, config?.height, config?.margin);
+  const color = config?.colors?.primary || "blue";
 
   const { xScale, yScale } = useScales(data, boundedWidth, boundedHeight);
 
