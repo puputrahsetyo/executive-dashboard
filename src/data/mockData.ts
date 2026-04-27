@@ -1,8 +1,8 @@
 export const kpis = [
-  { title: "Revenue", value: "$12,430", change: 12 },
-  { title: "Users", value: "1,240", change: 8 },
-  { title: "Conversion", value: "3.2%", change: -2 },
-  { title: "Growth", value: "+15%", change: 15 },
+  { title: "Revenue", unit: "$", value: 12430, change: 8 },
+  { title: "Users", value: 1240, change: 5 },
+  { title: "Conversion", value: 3.2, change: -2, inPercentage: true },
+  { title: "Growth", value: 15, unit:"+", change: 15, inPercentage: true },
 ];
 
 export const revenueData = [

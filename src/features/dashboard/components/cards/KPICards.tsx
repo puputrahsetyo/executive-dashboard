@@ -1,31 +1,35 @@
 import { formatNumber } from "@/shared/utils/formatNumber";
 
 type Props = {
+  icon?: React.ReactNode;
   title: string;
-  value: number | string;
-  change: number;
+  unit?: string;
+  inPercentage?: boolean;
+  value: number;
+  change?: number;
+  changeTime?: 'day' | 'week' | 'month' | 'year';
 };
 
-export const KPICard = ({ title, value, change }: Props) => {
-  const isPositive = change > 0;
-
+export const KPICard = ({ icon, title, value, unit, change, changeTime, inPercentage}: Props) => {
   return (
     <div className="card">
-      <div className="flex items-center justify-between">
-        <span className="text-sm text-gray-300">{title}</span>
-        <span
-          className={`text-xs px-2 py-1 rounded-full ${
-            isPositive
-              ? "bg-green-900/70 text-green-100"
-              : "bg-red-900/70 text-red-100"
-          }`}
-        >
-          {isPositive ? "+" : ""}
-          {change}%
-        </span>
+      <div>
+        <span>{icon}</span>
+        <span className="text-sm text-stone-300 font-semibold">{title}</span>
       </div>
-
-      <div className="mt-3 text-2xl font-semibold">{ typeof value === "number" ? formatNumber(value) : value }</div>
+      <div className="mt-3 text-4xl font-semibold text-white">
+        <span className="text-stone-500">{unit}</span>
+        {formatNumber(value)}
+        {inPercentage && <span className="text-stone-500">%</span>}
+      </div>
+      <div className={`mt-2 text-xs text-stone-400`}>
+        {change !== undefined && (
+          <span className={`font-medium ${change > 0 ? "text-green-500" : change < 0 ? "text-red-500" : "text-gray-500"}`}>
+            {change > 0 && "+"}{change}%
+          </span>
+        )}
+        <span className="ml-1">from last {changeTime ||'month'}</span>
+      </div>
     </div>
   );
 };
